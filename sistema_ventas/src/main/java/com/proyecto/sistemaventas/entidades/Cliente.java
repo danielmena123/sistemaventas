@@ -12,8 +12,10 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@Column
+	@Column(name = "NombreCliente")
 	private String nombre;
+	
+	//Builders
 	
 	public Cliente(int id, String nombre) {
 		this.id = id;
@@ -22,6 +24,9 @@ public class Cliente {
 	public Cliente( String nombre) {
 		this.nombre = nombre;
 	}
+	
+	//Getters && Setters
+	
 	public int getId() {
 		return id;
 	}
