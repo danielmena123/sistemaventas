@@ -14,15 +14,19 @@ public class Cliente {
 	private int id;
 	@Column(name = "NombreCliente")
 	private String nombre;
+	@Column(name = "EstadoCliente")
+	private int estado;
 	
 	//Builders
 	
-	public Cliente(int id, String nombre) {
+	public Cliente(int id, String nombre, int estado) {
 		this.id = id;
 		this.nombre = nombre;
+		this.estado = estado;
 	}
-	public Cliente( String nombre) {
+	public Cliente( String nombre, int estado) {
 		this.nombre = nombre;
+		this.estado = estado;
 	}
 	
 	//Getters && Setters
@@ -38,6 +42,12 @@ public class Cliente {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	public int getEstado() {
+		return estado;
+	}
+	public void setEstado(int estado) {
+		this.estado = estado;
 	}
 	
 }

@@ -18,6 +18,8 @@ public class DetalleCompra {
 	private int cantidad;
 	@Column(name = "Subtotal")
 	private double subtotal;
+	@Column(name = "EstadoDetalleCompra")
+	private int estado;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "IdProducto")
 		private Producto producto;
@@ -29,19 +31,21 @@ public class DetalleCompra {
 	
 	public DetalleCompra() {}
 
-	public DetalleCompra(int id, int cantidad, double subtotal, Producto producto, Compra compra) {
+	public DetalleCompra(int id, int cantidad, double subtotal, Producto producto, Compra compra, int estado) {
 		this.id = id;
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
 		this.producto = producto;
 		this.compra = compra;
+		this.estado = estado;
 	}
 	
-	public DetalleCompra(int cantidad, double subtotal, Producto producto, Compra compra) {
+	public DetalleCompra(int cantidad, double subtotal, Producto producto, Compra compra, int estado) {
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
 		this.producto = producto;
 		this.compra = compra;
+		this.estado = estado;
 	}
 	
 	//Getter && Setter
@@ -85,6 +89,13 @@ public class DetalleCompra {
 	public void setCompra(Compra compra) {
 		this.compra = compra;
 	}
-	
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
 	
 }

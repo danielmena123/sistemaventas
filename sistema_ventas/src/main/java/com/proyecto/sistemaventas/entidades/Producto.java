@@ -18,6 +18,9 @@ public class Producto {
 	private String nombre;
 	@Column(name = "PrecioProducto")
 	private double precio;
+	@Column(name = "EstadoProducto")
+	private int estado;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "IdProveedor")
 		private Proveedor proveedor;
@@ -29,19 +32,21 @@ public class Producto {
 	
 	public Producto() {}
 
-	public Producto(int id, String nombre, double precio, Proveedor proveedor, Categoria categoria) {
+	public Producto(int id, String nombre, double precio, Proveedor proveedor, Categoria categoria, int estado) {
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.proveedor = proveedor;
 		this.categoria = categoria;
+		this.estado = estado;
 	}
 	
-	public Producto(String nombre, double precio, Proveedor proveedor, Categoria categoria) {
+	public Producto(String nombre, double precio, Proveedor proveedor, Categoria categoria, int estado) {
 		this.nombre = nombre;
 		this.precio = precio;
 		this.proveedor = proveedor;
 		this.categoria = categoria;
+		this.estado = estado;
 	}
 	
 	//Getters && Setters
@@ -84,6 +89,14 @@ public class Producto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
 	}
 	
 }

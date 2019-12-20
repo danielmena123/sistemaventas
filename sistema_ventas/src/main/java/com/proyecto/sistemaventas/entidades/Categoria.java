@@ -13,17 +13,21 @@ public class Categoria {
 	private int id;
 	@Column(name = "NombreCategoria")
 	private String nombre;
+	@Column(name = "EstadoCategoria")
+	private int estado;
 	
 	//Builders
 	public Categoria() {}
 	
-	public Categoria(int id, String nombre) {
+	public Categoria(int id, String nombre, int estado) {
 		this.id = id;
 		this.nombre = nombre;
+		this.estado = estado;
 	}
 	
-	public Categoria(String nombre) {
+	public Categoria(String nombre, int estado) {
 		this.nombre = nombre;
+		this.estado = estado;
 	}
 	
 	//Getters && Setters
@@ -43,4 +47,13 @@ public class Categoria {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+	
 }

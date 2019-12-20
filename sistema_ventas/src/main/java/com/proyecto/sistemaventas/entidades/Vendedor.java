@@ -19,25 +19,30 @@ public class Vendedor {
 	private String direccion;
 	@Column(name = "TelefonoVendedor")
 	private String telefono;
+	@Column(name = "EstadoVendedor")
+	private int estado;
+	
 	
 	//Builders
 	
 	public Vendedor(){}
 	
-	public Vendedor(int id, String nombre, String dui, String direccion, String telefono) {
+	public Vendedor(int id, String nombre, String dui, String direccion, String telefono, int estado) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.dui = dui;
 		this.direccion = direccion;
 		this.telefono = telefono;
+		this.estado = estado;
 	}
 	
-	public Vendedor(String nombre, String dui, String direccion, String telefono) {
+	public Vendedor(String nombre, String dui, String direccion, String telefono, int estado) {
 		this.nombre = nombre;
 		this.dui = dui;
 		this.direccion = direccion;
 		this.telefono = telefono;
+		this.estado = estado;
 	}
 	
 	//Getters && Setters
@@ -81,4 +86,13 @@ public class Vendedor {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+	
 }
