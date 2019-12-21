@@ -15,20 +15,24 @@ public class Sucursal {
 	private String nombre;
 	@Column(name = "DireccionSucursal")
 	private String direcion;
+	@Column(name = "EstadoSucursal")
+	private int estado;
 	
 	//Builders
 	
 	public Sucursal () {}
 	
-	public Sucursal(int id, String nombre, String direcion) {
+	public Sucursal(int id, String nombre, String direcion, int estado) {
 		this.id = id;
 		this.nombre = nombre;
 		this.direcion = direcion;
+		this.estado = estado;
 	}
 	
-	public Sucursal(String nombre, String direcion) {
+	public Sucursal(String nombre, String direcion, int estado) {
 		this.nombre = nombre;
 		this.direcion = direcion;
+		this.estado = estado;
 	}
 	
 	//Getters && Setters
@@ -56,4 +60,13 @@ public class Sucursal {
 	public void setDirecion(String direcion) {
 		this.direcion = direcion;
 	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+	
 }

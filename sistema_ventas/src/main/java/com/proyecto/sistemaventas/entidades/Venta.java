@@ -20,35 +20,40 @@ public class Venta {
 	private double total;
 	@Column(name = "FechaVenta")
 	private Date fechaventa;
+	@Column(name = "EstadoVenta")
+	private int estado;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "IdVendedor")
-	private Vendedor vendedor;	
+		private Vendedor vendedor;	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "IdCliente")
-	private Cliente cliente;	
+		private Cliente cliente;	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "IdSucursal")
-	private Sucursal sucursal;
+		private Sucursal sucursal;
+	
 	
 	//Builders
 	
 	public Venta() {}
 		
-	public Venta(int id, double total, Date fechaventa, Vendedor vendedor, Cliente cliente, Sucursal sucursal) {
+	public Venta(int id, double total, Date fechaventa, Vendedor vendedor, Cliente cliente, Sucursal sucursal, int estado) {
 		this.id = id;
 		this.total = total;
 		this.fechaventa = fechaventa;
 		this.vendedor = vendedor;
 		this.cliente = cliente;
 		this.sucursal = sucursal;
+		this.estado = estado;
 	}
 	
-	public Venta(double total, Date fechaventa, Vendedor vendedor, Cliente cliente, Sucursal sucursal) {
+	public Venta(double total, Date fechaventa, Vendedor vendedor, Cliente cliente, Sucursal sucursal, int estado) {
 		this.total = total;
 		this.fechaventa = fechaventa;
 		this.vendedor = vendedor;
 		this.cliente = cliente;
 		this.sucursal = sucursal;
+		this.estado = estado;
 	}
 	
 	//Getters && Setters
@@ -111,4 +116,13 @@ public class Venta {
 	public void setSucursal(Sucursal sucursal) {
 		this.sucursal = sucursal;
 	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+	
 }

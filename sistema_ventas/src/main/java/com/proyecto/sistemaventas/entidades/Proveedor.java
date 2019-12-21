@@ -13,7 +13,7 @@ public class Proveedor {
 	private int id;
 	@Column(name = "NombreProveedor")
 	private String nombre;
-	@Column(name = "DireccionProveeedor")
+	@Column(name = "DireccionProveedor")
 	private String direccion;
 	@Column(name = "EstadoProveedor")
 	private int estado;
